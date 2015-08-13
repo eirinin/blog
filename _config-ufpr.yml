@@ -1,0 +1,9 @@
+title: Abel Soares Siqueira
+email: abel.s.siqueira@gmail.com
+description: >
+  My Blog
+baseurl: "/~abelsiqueira/blog" # the subpath of your site, e.g. /blog/
+url: "http://people.ufpr.br" # the base hostname & protocol for your site
+twitter_username: abel_siqueira
+github_username:  abelsiqueira
+markdown: kramdown

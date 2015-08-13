@@ -25,13 +25,20 @@
   </div>
 
   <div class="wrapper">
-    <div class="footer-col">
+    <div class="footer-col footer-col-1">
       <a href="https://github.com/{{ site.github_username }}">
         <img width="32px" src="{{ site.baseurl }}/img/github.png">
       </a>
       <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
         <img width="32px" src="{{ site.baseurl }}/img/rss.png">
       </a>
+    </div>
+    <div class="footer-col footer-col-2">
+      {% if site.url == "http://abelsiqueira.github.io" %}
+      <a href="{{ site.url }}"> Work page </a>
+      {% elsif site.url == "http://people.ufpr.br" %}
+      <a href="{{ site.url }}/~abelsiqueira"> Work page </a>
+      {% endif %}
     </div>
   </div>
 
