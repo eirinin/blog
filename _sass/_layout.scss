@@ -184,6 +184,9 @@
 .post-meta {
     font-size: $small-font-size;
     color: $grey-color;
+    text-align: right;
+    text-align-last: right;
+    -moz-text-align-last: right;
 }
 
 .post-link {
@@ -208,12 +211,23 @@
 /**
  * Posts
  */
+.post {
+  background: linear-gradient(90deg, rgba(255,255,255,0.5), rgba(255,255,255,0.1));
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  padding: 10px;
+}
+
 .post-header {
     margin-bottom: $spacing-unit;
+    font-variant: small-caps;
+    text-align: justify;
+    text-align-last: justify;
+    -moz-text-align-last: justify;
 }
 
 .post-title {
-    font-size: 42px;
+    font-size: 36px;
     letter-spacing: -1px;
     line-height: 1;
 
@@ -224,6 +238,7 @@
 
 .post-content {
     margin-bottom: $spacing-unit;
+    text-align: justify;
 
     h2 {
         font-size: 32px;
