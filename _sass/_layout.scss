@@ -13,9 +13,11 @@
 .site-title {
     font-size: 26px;
     line-height: 56px;
-    letter-spacing: -1px;
+    letter-spacing: 1px;
     margin-bottom: 0;
+    font-weight: bold;
     float: left;
+    font-variant: small-caps;
 
     &,
     &:visited {
@@ -176,6 +178,7 @@
     > li {
         margin-bottom: $spacing-unit;
     }
+    text-align: right;
 }
 
 .post-meta {
@@ -188,6 +191,18 @@
     font-size: 24px;
 }
 
+.post-list h2 {
+  text-align: left;
+}
+
+.post-list li {
+    border-width: 3px;
+    border-style: solid double double solid;
+    border-radius: 0px 50px 10px 50px;
+    border-color: #808080;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
 
 
 /**
