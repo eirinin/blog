@@ -4,8 +4,11 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+My name is Abel, I'm a professor at the Federal University of Paraná.
+[My professional page](http://people.ufpr.br/~abelsiqueira) has information
+about that part of my life.
+This blog serves as a collection of things I find useful, things I find
+interesting and random posting.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Some posts are in brazilian portuguese, mostly those that do not provide
+international interest.
