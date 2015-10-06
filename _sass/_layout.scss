@@ -264,3 +264,21 @@
         }
     }
 }
+
+.media {
+  border-width: 1px;
+  border-color: #808080;
+  border-style: solid;
+  border-radius: 5px;
+  min-height: 102px;
+}
+
+.media img {
+  border: 1px solid black;
+  border-radius:50px;
+  height: 100px;
+}
+
+.media-left {
+  float: left;
+}
