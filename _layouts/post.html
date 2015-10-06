@@ -18,8 +18,7 @@ layout: default
   /** CONFIGURATION VARIABLES **/
   var commentitUsername = 'abelsiqueira';
   var commentitRepo = 'abelsiqueira/blog';
-  var commentitPath = '{{ page.path }}';
-  var commentitId = '{{ page.name }}';
+  var commentitId = '{{ page.id }}';
 
   /** DON'T EDIT FOLLOWING LINES **/
   (function() {
@@ -31,8 +30,8 @@ layout: default
   })();
 </script>
 
-{% if page.comments %}
-  {% assign sorted_comments = (page.comments | sort: 'date') %}
+{% if page.data.comments[page.id] %}
+  {% assign sorted_comments = (page.data.comments[page.id] | sort: 'date') %}
 {% endif %}
 {% for c in sorted_comments %}
   <div class="media">
