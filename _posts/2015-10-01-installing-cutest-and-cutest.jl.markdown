@@ -9,7 +9,7 @@ name:        2015-10-01-installing-cutest-and-cutest.jl
 This post will tell you how to install CUTEst using a different tool that makes
 it much easier. Also, I'll install CUTEst.jl, the CUTEst interface for Julia.
 
-**Edit:** *Some corrections were made at November, 11, 2015*.
+**Edit:** *Some corrections were made on November, 11, 2015*.
 
 By now you probably know
 [CUTEst](http://ccpforge.cse.rl.ac.uk/gf/project/cutest/wiki),
