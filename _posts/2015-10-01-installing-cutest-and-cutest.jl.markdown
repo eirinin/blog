@@ -9,6 +9,8 @@ name:        2015-10-01-installing-cutest-and-cutest.jl
 This post will tell you how to install CUTEst using a different tool that makes
 it much easier. Also, I'll install CUTEst.jl, the CUTEst interface for Julia.
 
+**Edit:** *Some corrections were made at November, 11, 2015*.
+
 By now you probably know
 [CUTEst](http://ccpforge.cse.rl.ac.uk/gf/project/cutest/wiki),
 the repository for testing and comparing nonlinear programming algorithms.
@@ -46,7 +48,7 @@ To install brew, I recommend you check the page. For the impatient,
 
 {% highlight bash %}
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
-echo PATH="$HOME/.linuxbrew/bin:$PATH" >> $HOME/.bashrc
+echo PATH="\$HOME/.linuxbrew/bin:\$PATH" >> $HOME/.bashrc
 source $HOME/.bashrc
 sudo apt-get install build-essential subversion
 brew doctor
@@ -64,10 +66,15 @@ for f in archdefs mastsif sifdecode cutest; do \
   echo "source $(brew --prefix $f)/$f.bashrc" >> \
   $HOME/.bashrc; \
 done
+echo LD_LIBRARY_PATH="\$HOME/.linuxbrew/lib:\$LD_LIBRARY_PATH" >> $HOME/.bashrc
 source $HOME/.bashrc
 {% endhighlight %}
 
-This should get CUTEst installed. Test it with
+This should get CUTEst installed.
+Notice the `LD_LIBRARY_PATH` variable, which points to where the CUTEst library
+will be.
+
+Test it with
 
 {% highlight bash %}
 brew test sifdecode
@@ -86,9 +93,7 @@ issue the commands
 
 {% highlight julia %}
 Pkg.clone("https://github.com/optimizers/CUTEst.jl")
-Pkg.check("CUTEst", "develop")
-Pkg.add("Compat")
-Pkg.add("MathProgBase")
+Pkg.checkout("CUTEst", "develop")
 Pkg.test("CUTEst")
 {% endhighlight %}
 
@@ -111,6 +116,12 @@ months).
 If you need it, please contact me.
 
 This concludes the new installation of CUTEst.
+
+**Warning**: Due to current limitations we cannot open two problems at the same
+time in CUTEst without the possibility of a segmentation fault.
+So, if you need to run cutest for a list of problems, I suggest you use a bash
+script to loop over each problem and call your Julia code passing the problem as
+an input argument.
 
 Ths embedded Asciinema video is below.
 
