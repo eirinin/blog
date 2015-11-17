@@ -48,7 +48,7 @@ To install brew, I recommend you check the page. For the impatient,
 
 {% highlight bash %}
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
-echo PATH="\$HOME/.linuxbrew/bin:\$PATH" >> $HOME/.bashrc
+echo 'export PATH="$HOME/.linuxbrew/bin:$PATH"' >> $HOME/.bashrc
 source $HOME/.bashrc
 sudo apt-get install build-essential subversion
 brew doctor
@@ -66,7 +66,7 @@ for f in archdefs mastsif sifdecode cutest; do \
   echo "source $(brew --prefix $f)/$f.bashrc" >> \
   $HOME/.bashrc; \
 done
-echo LD_LIBRARY_PATH="\$HOME/.linuxbrew/lib:\$LD_LIBRARY_PATH" >> $HOME/.bashrc
+echo 'export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"' >> $HOME/.bashrc
 source $HOME/.bashrc
 {% endhighlight %}
 
@@ -94,12 +94,9 @@ issue the commands
 {% highlight julia %}
 Pkg.clone("https://github.com/optimizers/CUTEst.jl")
 Pkg.checkout("CUTEst", "develop")
-Pkg.test("CUTEst")
 {% endhighlight %}
 
-After issuing the test, CUTEst will compile a specific problem, then test it
-with a bunch of interface commands. If anything goes wrong, please open an
-issue on GitHub. If nothing goes wrong, then you can play around.
+If nothing goes wrong, then you can play around.
 For instance, to open problem HS32 and get the objective function value at point
 (2,3), we do
 
