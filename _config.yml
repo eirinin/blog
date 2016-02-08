@@ -10,4 +10,3 @@ github_username:  abelsiqueira
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
