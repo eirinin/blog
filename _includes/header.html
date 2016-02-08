@@ -1,8 +1,12 @@
 <header class="site-header">
 
-  <div class="wrapper">
+  <div class="header-image">
+    <h1 class="header-title">
+      <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+    </h1>
+  </div>
 
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+  <div class="wrapper">
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -22,24 +26,6 @@
       </div>
     </nav>
 
-  </div>
-
-  <div class="wrapper">
-    <div class="footer-col footer-col-1">
-      <a href="https://github.com/{{ site.github_username }}">
-        <img width="32px" src="{{ site.baseurl }}/img/github.png">
-      </a>
-      <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
-        <img width="32px" src="{{ site.baseurl }}/img/rss.png">
-      </a>
-    </div>
-    <div class="footer-col footer-col-2">
-      {% if site.url == "http://abelsiqueira.github.io" %}
-      <a href="{{ site.url }}"> Work page </a>
-      {% elsif site.url == "http://people.ufpr.br" %}
-      <a href="{{ site.url }}/~abelsiqueira"> Work page </a>
-      {% endif %}
-    </div>
   </div>
 
 </header>
