@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 My name is Abel, I'm a professor at the Federal University of Paraná.
-[My professional page](http://people.ufpr.br/~abelsiqueira) has information
+[My professional page](/) has information
 about that part of my life.
 This blog serves as a collection of things I find useful, things I find
 interesting and random posting.
