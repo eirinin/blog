@@ -25,6 +25,10 @@
           <a class="page-link" href="{{ pg.url | prepend: site.baseurl }}">{{ pg.title }}</a>
           {% endif %}
         {% endfor %}
+        <div class="page-link-rss">
+          <a href="{{ site.baseurl }}/feed.xml">
+            <img src="{{ site.baseurl }}/img/rss.png"></a>
+        </div>
       </div>
     </nav>
 
