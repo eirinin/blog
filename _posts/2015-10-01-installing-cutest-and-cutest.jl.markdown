@@ -2,8 +2,8 @@
 layout:      post
 title:       Installing CUTEst and CUTEst.jl
 date:        2015-10-01
-categories:  cutest julia sifdecode optimization
 name:        2015-10-01-installing-cutest-and-cutest.jl
+tags: cutest julia
 ---
 
 This post will tell you how to install CUTEst using a different tool that makes

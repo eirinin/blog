@@ -2,8 +2,8 @@
 layout:     post
 title:      Instalando o Ubuntu 14.10 no Sony Vaio (Problemas com o SSD)
 date:       2015-01-12
-categories: public-utility
 name:       ubuntu-sony-vaio
+tags: tech ubuntu work install
 ---
 Hoje instalei em dual-boot o Ubuntu 14.10 e o windows 8.
 Não tive problemas com o UEFI, nem secure boot.

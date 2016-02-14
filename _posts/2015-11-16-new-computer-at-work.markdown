@@ -2,8 +2,8 @@
 layout:      post
 title:       New computer at work
 date:        2015-11-16
-categories:  arch linux installation work
 name:        2015-11-16-new-computer-at-work
+tags: work install arch linux
 ---
 
 I just got a new notebook at work. This is a HP computer, with a AMD a10-4600M

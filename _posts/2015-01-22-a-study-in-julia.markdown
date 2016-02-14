@@ -2,8 +2,8 @@
 layout:     post
 title:      A Study in Julia
 date:       2015-01-22
-categories: research
 name:       juliastudy
+tags: julia work C fortran
 ---
 Today I begin a study in [Julia](http://julialang.org/).
 This fantastic tool has syntax similar to that of Octave/Matlab,

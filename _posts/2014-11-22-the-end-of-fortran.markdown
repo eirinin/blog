@@ -2,8 +2,8 @@
 layout:     post
 title:      The End of Fortran
 date:       2014-11-22
-categories: research
 name:       endoffortran
+tags: rant programming fortran julia
 ---
 One of my main interest is the end of Fortran **as the only programming language
 used by mathematicias**. If you're not in the area of mathematical programming,

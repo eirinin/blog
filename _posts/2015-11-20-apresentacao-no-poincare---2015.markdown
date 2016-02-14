@@ -2,8 +2,8 @@
 layout:      post
 title:       Apresentação no Poincaré - 2015
 date:        2015-11-20
-categories:
 name:        2015-11-20-apresentacao-no-poincare---2015
+tags: presentation work
 ---
 
 Fui convidado a fazer alguma apresentação para os seminários Poincaré do PET

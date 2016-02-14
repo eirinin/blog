@@ -3,7 +3,7 @@ layout: post
 title:  Professional site and blog for researchers, professors and students
 date:   2016-02-13
 name:   2016-02-13-professional-site-and-blog-for-researchers-professores-and-students
-tldr:
+tags: jekyll site blog
 ---
 
 TL; DR: Make a professional web page, like [mine]({{ site.baseurl }}/../),

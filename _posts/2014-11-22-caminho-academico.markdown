@@ -2,8 +2,8 @@
 layout:     post
 title:      Caminho Acadêmico
 date:       2014-11-22
-categories: curriculum
 name:       academicpath
+tags: work
 ---
 Versão curta:
 

@@ -2,8 +2,8 @@
 layout:     post
 title:      SiCLIPoD - Um Gerenciador de Podcasts Simples em Linha de Comando
 date:       2014-12-11
-categories: fun
 name:       siclipod
+tags: siclipod fun
 ---
 Há algum tempo eu, esporadicamente, eu escuto o podcast do [Jovem
 Nerd](http://jovemnerd.com.br/categoria/nerdcast/).

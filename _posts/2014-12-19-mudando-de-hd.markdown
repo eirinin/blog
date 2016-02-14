@@ -2,8 +2,8 @@
 layout:     post
 title:      Mudando de HD
 date:       2014-12-19
-categories: public-utility
 name:       mudando-de-hd
+tags: tech work arch linux install
 ---
 Ontem eu acabei de montar um computador novo.
 Esse computador é um upgrade do meu, e o meu passaria para a Kally.

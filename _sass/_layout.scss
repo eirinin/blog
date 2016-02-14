@@ -212,6 +212,16 @@
     }
 }
 
+.post-list-compact {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: $spacing-unit/2;
+        position: relative;
+    }
+}
+
 .post-list-date {
   display: block;
   position: absolute;

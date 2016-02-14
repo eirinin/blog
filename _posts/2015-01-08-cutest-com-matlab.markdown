@@ -2,8 +2,8 @@
 layout:     post
 title:      CUTEst Com Matlab
 date:       2015-01-08
-categories: research
 name:       cutest-com-matlab
+tags: cutest matlab tech
 ---
 No meu [vídeo do YouTube](https://www.youtube.com/watch?v=pM7FmOXHyns),
 eu ensinei como se faz para instalar o CUTEst. Hoje estendo a instalação

@@ -2,8 +2,8 @@
 layout:     post
 title:      "ShareLaTeX e o básico do cabeçalho"
 date:       2015-01-06
-categories: public-utility
 name:       latexheaderbasic
+tags: sharelatex latex
 ---
 Este post serve principalmente para meus alunos e outros interessados em começar
 a usar o LaTeX. A primeira coisa a se notar é que instalar o compilador é bem

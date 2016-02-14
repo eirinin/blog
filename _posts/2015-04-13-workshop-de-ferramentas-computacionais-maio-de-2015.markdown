@@ -2,9 +2,9 @@
 layout:     post
 title:      Workshop de Ferramentas Computacionais - Maio de 2015
 date:       2015-04-13
-categories: public-utility
 name:       workshop-2015-05-30
 permalink:  workshop-2015-05-30
+tags: workshop swc bash git julia
 ---
 
 # Sobre

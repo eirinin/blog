@@ -2,8 +2,8 @@
 layout:     post
 title:      Apresentação no VII Simpósio de Análise Numérica e Otimização - UFPR
 date:       2015-02-25
-categories: curriculum
 name:       vii-simposio
+tags: work presentation tools julia
 ---
 No dia 24 de Fevereiro de 2015 aconteceu o (primeiro dia do) VII Simpósio de
 Análise Numérica e Otimização.

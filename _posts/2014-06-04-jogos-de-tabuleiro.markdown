@@ -1,9 +1,9 @@
 ---
-layout:     post
-title:      Jogos de Tabuleiro
-date:       2014-06-04
-categories: fun
-name:       boardgames
+layout: post
+title: Jogos de Tabuleiro
+date: 2014-06-04
+name: boardgames
+tags: boardgames fun
 ---
 Eu (não tão) recementemente me interessei em jogos de tabuleiro. Para
 clarificar, não estou me referindo aos jogos de tabuleiro "clássicos", como War,

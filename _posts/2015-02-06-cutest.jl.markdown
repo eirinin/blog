@@ -2,8 +2,8 @@
 layout:     post
 title:      CUTEst.jl
 date:       2015-02-06
-categories: research
 name:       cutest.jl
+tags: cutest julia
 ---
 About an year ago,
 [Raniere](http://rgaiacs.com/)

@@ -2,8 +2,8 @@
 layout:     post
 title:      A CLI Reminder - Remind
 date:       2015-04-13
-categories: public-utility
 name:       remind
+tags: review remind
 ---
 I've struggled with remembering appointments and tasks for a long time.
 During my undergraduate courses, I learned to manage the tasks I had because

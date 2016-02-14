@@ -2,8 +2,8 @@
 layout:     post
 title:      Resultado da Oficina de Ferramentas Computacionais Para Pesquisadores
 date:       2015-05-30
-categories: public-utility
 name:       oficina-2015-05-30-postmortem
+tags: workshop impression
 ---
 Hoje aconteceu a [Oficina de Ferramentas Computacionais para
 Pesquisadores]({{site.baseurl}}/workshop-2015-05-30).

@@ -3,8 +3,8 @@ layout:     post
 title:      "Selecting a Subgroup of CUTEst Problems According to Specific
 Criteria"
 date:       2015-01-16
-categories: research
 name:       cutest-problem-chooser
+tags: cutest classification
 ---
 For some time now I've been using CUTEst or CUTEr,
 and one of the common problems is selecting the problem you

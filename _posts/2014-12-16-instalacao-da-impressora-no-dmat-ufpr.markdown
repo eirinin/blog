@@ -2,8 +2,8 @@
 layout:     post
 title:      Instalação da Impressora no DMAT-UFPR
 date:       2014-12-16
-categories: public-utility
 name:       instalacao-da-impressora-no-dmat-ufpr
+tags: printer ufpr work tech
 ---
 Hoje tive que instalar a impressora do DMAT da UFPR no meu
 [archlinux](https://www.archlinux.org/). Infelizmente o suporte técnico da
