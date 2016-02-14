@@ -11,9 +11,10 @@ filename=$date-$name.md
 cat >> _posts/$filename << EOF
 ---
 layout: post
-title:  $title
-date:   $date
-name:   $date-$name
+title: $title
+date: $date
+name: $date-$name
+tags:
 ---
 EOF
 
