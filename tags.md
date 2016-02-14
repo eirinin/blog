@@ -19,8 +19,9 @@ var words = [
 	{% for tag in tags %}
 		{text: "{{ tag.name }}",
 		weight: {{ tag.count }},
+    html: { class: "cloud-word" },
 		handlers: {click: function() {
-document.getElementById('taglist').innerHTML = '<h3>{{ tag.name }} posts</h3>\
+document.getElementById('taglist').innerHTML = '<h3 id="taglisth3">{{ tag.name }} posts</h3>\
 <ul class="post-list-compact">\
 {% for post in site.posts %} {% for t in post.tags %} {% if t == tag.key %}\
 <li> <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">\
@@ -34,9 +35,12 @@ document.getElementById('taglist').innerHTML = '<h3>{{ tag.name }} posts</h3>\
 ];
 $(function() {
 	$('#tagcloud').jQCloud(words, {
-		autoResize: true
+		autoResize: true,
+    classPattern: null,
+    colors: ["#000", "#111", "#222", "#333", "#444", "#555", "#666", "#777",
+    "#888", "#999", "#aaa"],
+    fontSize: { from: 0.1, to: 0.02 }
 	});
 });
 
 </script>
-

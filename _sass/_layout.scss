@@ -321,3 +321,14 @@
 .media-left {
   float: left;
 }
+
+.cloud-word {
+  a {
+    font-weight: normal;
+    font-variant: small-caps;
+    &:hover {
+      text-decoration: none;
+      color: #099;
+    }
+  }
+}
