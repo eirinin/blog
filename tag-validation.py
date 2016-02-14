@@ -36,7 +36,9 @@ for pname in os.listdir("_posts"):
             break
 
 with open("_data/tags.yml", "w") as fout:
-    for key in tag_count.keys():
+    for tag in sorted(tag_count.items(), key=lambda t: (-t[1],t[0])):
+        key = tag[0]
+        count = tag[1]
         if key in names:
             name = names[key]
         else:
@@ -44,4 +46,4 @@ with open("_data/tags.yml", "w") as fout:
             name = "FIX"
         fout.write("- key: {}\n".format(key))
         fout.write("  name: {}\n".format(name))
-        fout.write("  count: {}\n".format(tag_count[key]))
+        fout.write("  count: {}\n".format(count))
