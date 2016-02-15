@@ -9,6 +9,8 @@ tags: cutest julia
 This post will tell you how to install CUTEst using a different tool that makes
 it much easier. Also, I'll install CUTEst.jl, the CUTEst interface for Julia.
 
+**Edit:** *Some corrections were made on February, 15, 2016*.
+
 **Edit:** *Some corrections were made on November, 11, 2015*.
 
 By now you probably know
@@ -55,13 +57,13 @@ brew doctor
 {% endhighlight %}
 
 To install CUTEst, read the
-[tap cutest](https://github.com/dpo/homebrew-cutest).
+[tap cutest](https://github.com/optimizers/homebrew-cutest).
 Again, for the impatient
 
 {% highlight bash %}
-brew tap dpo/cutest
-brew install cutest --HEAD
-brew install mastsif --HEAD
+brew tap optimizers/cutest
+brew install cutest
+brew install mastsif
 for f in archdefs mastsif sifdecode cutest; do \
   echo "source $(brew --prefix $f)/$f.bashrc" >> \
   $HOME/.bashrc; \
@@ -88,12 +90,12 @@ I'll now go to Julia, and I recommend you try it.
 To install Julia, go to their page, then downloads, then download the
 static version of the stable release (or do what you want, I'm not your boss).
 Then, in julia, to install
-[CUTEst.jl](https://github.com/optimizers/CUTEst.jl),
+[CUTEst.jl](https://github.com/abelsiqueira/CUTEst.jl),
 issue the commands
 
 {% highlight julia %}
-Pkg.clone("https://github.com/optimizers/CUTEst.jl")
-Pkg.checkout("CUTEst", "develop")
+Pkg.clone("https://github.com/abelsiqueira/CUTEst.jl")
+Pkg.checkout("CUTEst", "fix/issue4")
 {% endhighlight %}
 
 If nothing goes wrong, then you can play around.
