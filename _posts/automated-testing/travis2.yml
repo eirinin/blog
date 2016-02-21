@@ -1,0 +1,11 @@
+language: julia
+
+julia:
+  - release
+  - nightly
+
+script:
+  - julia --code-coverage=user --inline=no test/test1.jl
+
+after_success:
+  - julia -E 'Pkg.add("Coverage"); using Coverage; Coveralls.submit(process_folder())'

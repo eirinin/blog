@@ -1,0 +1,14 @@
+language: julia
+
+julia:
+  - release
+  - nightly
+
+install:
+  - julia -E 'Pkg.clone(pwd())'
+
+script:
+  - julia -E 'Pkg.test("BlogAutomatedTesting"; coverage=true)'
+
+after_success:
+  - julia -E 'cd(Pkg.dir("BlogAutomatedTesting")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(process_folder())'

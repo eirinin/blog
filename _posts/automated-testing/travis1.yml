@@ -1,0 +1,8 @@
+language: julia
+
+julia:
+  - release
+  - nightly
+
+script:
+  - julia test/test1.jl
