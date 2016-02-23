@@ -1,12 +1,14 @@
 <!-- From http://joshualande.com/jekyll-github-pages-poole/ -->
-{% unless page.nocomment %}
+{% if page.nocomment %}
+Comments disabled
+{% else %}
 <!-- Add Disqus comments. -->
 <div id="disqus_thread"></div>
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'abelsiqueira'; // required: replace example with your forum shortname
   var disqus_identifier = "{{ site.disqusid }}{{ page.url | replace:'index.html','' }}";
-  var disqus_developer = 1;
+  //var disqus_developer = 1;
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
   (function() {
