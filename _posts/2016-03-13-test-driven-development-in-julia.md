@@ -7,14 +7,14 @@ tags: tdd julia
 ---
 First, what is Test Driven Development (TDD)?
 Well, I'm not an expert, so don't quote me, but in practice it means that you
-develop your code to fulfill tests that you define prior to begin your work.
+develop your code to fulfill tests that you define prior to beginning your work.
 You do not define **all** your tests first, though. You define a single test,
 and produce code to pass it. Then you define another code, and produce code to
 pass both. And so forth until you complete your specification.
 
 This is good because:
 
-  - Wherever you stop, you know what it working.
+  - Wherever you stop, you know what is working.
   - When you finish, your code already has tests.
   - [You don't have to optimize
     prematurely.](http://c2.com/cgi/wiki?PrematureOptimization)
@@ -42,7 +42,7 @@ around.
 ## Julia
 
 First, we are gonna follow the *package* layout in Julia.
-[This post]({{ site.baseurl }}/automated-testing/), mentions it at the end.
+[This post]({{ site.baseurl }}/automated-testing/) mentions it at the end.
 Basically, we need
 
   - Folder PackageName.jl
@@ -60,7 +60,7 @@ site](http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals).
 
 **Important: You should use git, but I'll skip it here**
 
-Let's begin writing the defining parts of the project
+Let's begin writing the outline of the project
 
 {% highlight bash %}
 mkdir RomanNumerals.jl
@@ -85,14 +85,14 @@ include("test_digits.jl")
 This defines the building blocks. Note that `test_digits.jl` does not exist. We're
 gonna create it to test the individuals digits.
 
-Our testing environment will consist of having an open Julia terminal at all
-times, opened at the root of this project. Our testing command will be
+Our testing environment will consist of having a terminal open at all
+times at the root of this project. Our testing command will be
 
 {% highlight bash %}
 julia -L src/RomanNumerals.jl src/runtests.jl
 {% endhighlight %}
 
-There are different ways, but this is locally good.
+There are different ways to issue the same command, but this is locally good.
 
 ## Tests
 
@@ -353,5 +353,5 @@ become a nuisance to read.
 Yet another, is to use another way to make the sum.
 
 Since this post explains the usage of TDD, it ends here.
-You can continue with this problem until you can make a complete converted of
+You can continue with this problem until you can make a complete conversor of
 roman to decimal.
