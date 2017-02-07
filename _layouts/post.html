@@ -2,20 +2,19 @@
 layout: default
 ---
 
-<div class="post">
-
-  <header class="post-header">
+<div class="row">
+  <div class="col-xs-12">
     <h1 class="post-title">{{ page.title }}</h1>
+
     <p class="post-meta">{{ page.date | date: "%b %d, %Y" }}{% if page.author %}
     • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif
     %}</p>
-  </header>
 
-  <article class="post-content">
-    <h1> {{ postcodepath }} </h1>
-    {{ content }}
-  </article>
-
+    <article class="post-content">
+      <h1> {{ postcodepath }} </h1>
+      {{ content }}
+    </article>
+  </div>
 </div>
 
 {% include comments.html %}
