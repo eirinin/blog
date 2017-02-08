@@ -3,7 +3,7 @@ layout: post
 title: Advent of Code 2016 in Julia
 date: 2016-12-18
 name: 2016-12-18-advent-of-code-2016-in-julia
-tags: Julia Code Fun
+tags: julia code fun
 ---
 
 Last year I discovered by chance a code competition that happens in the month

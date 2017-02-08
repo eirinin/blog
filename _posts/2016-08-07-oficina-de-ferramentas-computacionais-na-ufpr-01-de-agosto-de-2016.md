@@ -3,7 +3,7 @@ layout: post
 title: Oficina de Ferramentas Computacionais na UFPR, 01 de Agosto de 2016
 date: 2016-08-07
 name: 2016-08-07-oficina-de-ferramentas-computacionais-na-ufpr-01-de-agosto-de-2016
-tags: software carpentry swc ufpr oficina workshop
+tags: swc ufpr oficina workshop
 ---
 Nesta semana que passou, dos dias 01 a 03 de Agosto, aconteceu uma Oficina de
 Ferramentas Computacionais na UFPR. Essa oficina seguiu os moldes das oficinas

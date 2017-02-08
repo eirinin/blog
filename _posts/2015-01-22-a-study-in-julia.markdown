@@ -3,7 +3,7 @@ layout:     post
 title:      A Study in Julia
 date:       2015-01-22
 name:       juliastudy
-tags: julia work C fortran
+tags: julia work c fortran
 ---
 Today I begin a study in [Julia](http://julialang.org/).
 This fantastic tool has syntax similar to that of Octave/Matlab,

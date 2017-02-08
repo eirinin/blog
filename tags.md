@@ -6,7 +6,7 @@ permalink: /tags/
 
 {% assign tags = site.data.tags | sort: 'count' | reverse %}
 
-<div style="height: 300px;" id="tagcloud"> </div>
+<div style="height: 600px;" id="tagcloud"> </div>
 
 <hr>
 
@@ -36,9 +36,20 @@ document.getElementById('taglist').innerHTML = '<h3 id="taglisth3">{{ tag.name }
 $(function() {
 	$('#tagcloud').jQCloud(words, {
 		autoResize: true,
+    delay: 10,
     classPattern: null,
-    colors: ["#000", "#111", "#222", "#333", "#444", "#555", "#666", "#777",
-    "#888", "#999", "#aaa"],
+    steps: 10,
+    colors: ["#a00",
+             "#821",
+             "#642",
+             "#463",
+             "#284",
+             "#0a5",
+             "#2a6",
+             "#4a7",
+             "#8a8",
+             "#aaa"
+             ],
     fontSize: { from: 0.1, to: 0.02 }
 	});
 });

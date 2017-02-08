@@ -1,9 +1,13 @@
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .img-icon {
   width: 32px;
+}
+
+.img-view {
+  width: 10vmin;
 }
 
 .title {
@@ -11,6 +15,13 @@ img {
   font-size: 6.0vw;
   border-bottom: 1px #d4f5d4 solid;
   font-family: 'Special Elite', 'Lora', serif;
+  a {
+    font-weight: normal;
+    &:hover {
+      color: #FF6D00;
+      text-decoration: none;
+    }
+  }
 }
 
 .links {
@@ -20,13 +31,25 @@ img {
   }
 }
 
+.cloud-word {
+  font-family: 'Satisfy'
+}
+
+.cloud-word a {
+  &:hover {
+    color: #FF6D00;
+    text-decoration: none;
+  }
+}
+
 .page-link {
   font-size: 2.0em;
 }
 
-.title a, .page-link, p a, a, .post-list a {
+.page-link, p a, a, .post-link {
   &, &:visited {
     color: #1B5E20;
+    font-weight: bold;
   }
   &:hover {
     color: #FF6D00;
@@ -42,4 +65,14 @@ img {
     padding-right: 1em;
     min-width: 25px;
   }
+}
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
 }
