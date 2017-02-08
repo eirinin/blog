@@ -11,7 +11,10 @@ CUTEst.jl, a wrapper for the CUTEst repository of problems for nonlinear
 optimization (which I've mentioned before).
 Along with this release, we've done a release of NLPModels.jl, the underlying
 package. I think it's time I explain a little about these packages, others,
-and how to use them together. (Hopefully, I'll release a video-tutorial soon).
+and how to use them together.
+If you want to see the output of the commands, you can open
+[this ASCIInema](https://asciinema.org/a/102371)
+side by side.
 
 *Obs.: Tutorial using Julia 0.5.0*
 
@@ -58,16 +61,16 @@ x0 = [-1.2; 1.0]
 ```
 Now, we are ready to create the problem.
 ```julia
-nlp = ADNLPModel(f, x0)
+adnlp = ADNLPModel(f, x0)
 ```
 Now, we can access the function and derivatives using the [NLPModels API](https://juliasmoothoptimizers.github.io/NLPModels.jl/stable/api.html)
 ```julia
-obj(nlp, nlp.meta.x0)
-grad(nlp, nlp.meta.x0)
-hess(nlp, nlp.meta.x0)
-objgrad(nlp, nlp.meta.x0)
-hprod(nlp, nlp.meta.x0, ones(2))
-H = hess_op(nlp, nlp.meta.x0)
+obj(adnlp, adnlp.meta.x0)
+grad(adnlp, adnlp.meta.x0)
+hess(adnlp, adnlp.meta.x0)
+objgrad(adnlp, adnlp.meta.x0)
+hprod(adnlp, adnlp.meta.x0, ones(2))
+H = hess_op(adnlp, adnlp.meta.x0)
 H * ones(2)
 ```
 
@@ -78,6 +81,7 @@ both functions at once, and `hess_op` returns a
 another structure created in JuliaSmoothOptimizers.
 This one defines a linear operator, extending Julia matrices in the sense that if
 ```julia
+using LinearOperators
 n = 100
 A = rand(n, n)
 B = rand(n, n)
@@ -107,18 +111,18 @@ in mind.
 ```julia
 using JuMP
 jmp = Model()
-@variable(jmp, x[i=1:2], start=(x0[i]) # x0 from before
+@variable(jmp, x[i=1:2], start=(x0[i])) # x0 from before
 @NLobjective(jmp, Min, (x[1] - 1)^2 + 100*(x[2] - x[1]^2)^2)
-nlp_jmp = MathProgNLPModel(jmp)
+mpbnlp = MathProgNLPModel(jmp)
 ```
 Try the commands again.
 ```julia
-obj(nlp, nlp.meta.x0)
-grad(nlp, nlp.meta.x0)
-hess(nlp, nlp.meta.x0)
-objgrad(nlp, nlp.meta.x0)
-hprod(nlp, nlp.meta.x0, ones(2))
-H = hess_op(nlp, nlp.meta.x0)
+obj(mpbnlp, mpbnlp.meta.x0)
+grad(mpbnlp, mpbnlp.meta.x0)
+hess(mpbnlp, mpbnlp.meta.x0)
+objgrad(mpbnlp, mpbnlp.meta.x0)
+hprod(mpbnlp, mpbnlp.meta.x0, ones(2))
+H = hess_op(mpbnlp, mpbnlp.meta.x0)
 H * ones(2)
 ```
 It should be pretty much the same, though there is a little difference in `hess`.
@@ -130,17 +134,18 @@ from above.
 This allows the write of a solver in just a couple of commands.
 For instance, a simple **Newton method**.
 ```julia
-function newton(nlp :: AbstractLinearOperator)
+function newton(nlp :: AbstractNLPModel)
   x = nlp.meta.x0
   fx = obj(nlp, x)
   gx = grad(nlp, x)
-  while norm(gx) > 1e-6
+  ngx = norm(gx)
+  while ngx > 1e-6
     Hx = hess(nlp, x)
     d = -gx
     try
       G = chol(Hermitian(Hx, :L)) # Make Cholesky work on lower-only matrix.
       d = -G\(G'\gx)
-    catch
+    catch e
       if !isa(e, Base.LinAlg.PosDefException); rethrow(e); end
     end
     t = 1.0
@@ -154,14 +159,15 @@ function newton(nlp :: AbstractLinearOperator)
     x = xt
     fx = ft
     gx = grad(nlp, x)
+    ngx = norm(gx)
   end
   return x, fx, ngx
 end
 ```
 And we run in the problems with
 ```julia
-newton(nlp)
-newton(nlp_jmp)
+newton(adnlp)
+newton(mpbnlp)
 ```
 
 *Write once, use on problems from different sources.*
@@ -266,13 +272,13 @@ Let's make a simple comparison
 ```julia
 function foo1()
   H = hess(nlp, nlp.meta.x0)
-  v = ones(nlp, nlp.meta.nvar)
+  v = ones(nlp.meta.nvar)
   return Hermitian(H, :L) * v
 end
 
 function foo2()
   H = hess_op(nlp, nlp.meta.x0)
-  v = ones(nlp, nlp.meta.nvar)
+  v = ones(nlp.meta.nvar)
   return H * v
 end
 
@@ -298,6 +304,7 @@ Pkg.clone("https://github.com/JuliaSmoothOptimizers/Krylov.jl")
 ```
 Consider a simple example
 ```julia
+using Krylov
 A = rand(3,3)
 A = A*A'
 b = A*ones(3)
@@ -324,13 +331,14 @@ method, but for now, let's continue with our line-search version.
 We know now how `cg` behaves for non-positive definite systems, we can't make
 the changes for a new method.
 ```julia
-function newton2(nlp :: AbstractLinearOperator)
+function newton2(nlp :: AbstractNLPModel)
   x = nlp.meta.x0
   fx = obj(nlp, x)
   gx = grad(nlp, x)
+  ngx = norm(gx)
   while norm(gx) > 1e-6
     Hx = hess_op(nlp, x)
-    d, _ = Krylov(Hx, -gx)
+    d, _ = cg(Hx, -gx)
     slope = dot(gx, d)
     if slope >= 0 # Not a descent direction
       d = -gx
@@ -347,6 +355,7 @@ function newton2(nlp :: AbstractLinearOperator)
     x = xt
     fx = ft
     gx = grad(nlp, x)
+    ngx = norm(gx)
   end
   return x, fx, ngx
 end
