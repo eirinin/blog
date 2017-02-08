@@ -48,22 +48,27 @@ Pkg.add("NLPModels.jl")
 Pkg.add("JuMP.jl") # Installs ForwardDiff also.
 ```
 This should install version 0.1.0. After that, just do
+
 ```julia
 using NLPModels
 ```
 Now, let's create a simple function: Rosenbrock's.
+
 ```julia
 f(x) = (x[1] - 1)^2 + 100*(x[2] - x[1]^2)^2
 ```
 The Rosenbrock problem traditionally starts from $(-1.2,1.0)$.
+
 ```julia
 x0 = [-1.2; 1.0]
 ```
 Now, we are ready to create the problem.
+
 ```julia
 adnlp = ADNLPModel(f, x0)
 ```
 Now, we can access the function and derivatives using the [NLPModels API](https://juliasmoothoptimizers.github.io/NLPModels.jl/stable/api.html)
+
 ```julia
 obj(adnlp, adnlp.meta.x0)
 grad(adnlp, adnlp.meta.x0)
@@ -80,6 +85,7 @@ both functions at once, and `hess_op` returns a
 [LinearOperator](https://github.com/JuliaSmoothOptimizers/LinearOperators.jl),
 another structure created in JuliaSmoothOptimizers.
 This one defines a linear operator, extending Julia matrices in the sense that if
+
 ```julia
 using LinearOperators
 n = 100
@@ -92,6 +98,7 @@ v = rand(n)
 then `(A * B) * v` computes the matrix product, whereas `(opA * opB) * v` won't.
 Furthermore, the linear operator can be created from the functions
 `v->Mp(v)` and `v->Mtp(v)`, defining the product of the linear operator times a vector and its transpose times a vector.
+
 ```julia
 T = LinearOperator(2, 2, # sizes
                    false, false,
@@ -108,6 +115,7 @@ The next model is the `MathProgNLPModel`. This model's main use is the `JuMP`
 modelling language. This is very useful for more elaborate writing, specially
 with constraints. It does create a little more overhead though, so keep that
 in mind.
+
 ```julia
 using JuMP
 jmp = Model()
@@ -116,6 +124,7 @@ jmp = Model()
 mpbnlp = MathProgNLPModel(jmp)
 ```
 Try the commands again.
+
 ```julia
 obj(mpbnlp, mpbnlp.meta.x0)
 grad(mpbnlp, mpbnlp.meta.x0)
@@ -133,6 +142,7 @@ Notice how the commands are the same. I've actually copy-pasted the commands
 from above.
 This allows the write of a solver in just a couple of commands.
 For instance, a simple **Newton method**.
+
 ```julia
 function newton(nlp :: AbstractNLPModel)
   x = nlp.meta.x0
@@ -165,6 +175,7 @@ function newton(nlp :: AbstractNLPModel)
 end
 ```
 And we run in the problems with
+
 ```julia
 newton(adnlp)
 newton(mpbnlp)
@@ -175,11 +186,13 @@ newton(mpbnlp)
 Now, to have more fun, let's get another package:
 [OptimizationProblems.jl](https://github.com/JuliaSmoothOptimizers/OptimizationProblems.jl).
 This package doesn't have a release yet, so we have to clone it:
+
 ```julia
 Pkg.clone("https://github.com/JuliaSmoothOptimizers/OptimizationProblems.jl")
 ```
 What we have here is a collection of JuMP models implementing some of the
 CUTEst problems. Together with `NLPModels.jl`, we have a good opportunity to test our Newton implementation.
+
 ```julia
 using OptimizationProblems
 
@@ -216,6 +229,7 @@ Essentially, we need `libgfortran.so` in a visible place. And it's especially
 annoying that some distritions don't put it in a visible place.
 
 With that done, enter
+
 ```julia
 Pkg.add("CUTEst")
 ```
@@ -224,6 +238,7 @@ which should install CUTEst.jl 0.1.0.
 Yes, it takes some time.
 
 Finally, we start using CUTEst with
+
 ```julia
 using CUTEst
 
@@ -234,6 +249,7 @@ nlp = CUTEstModel("ROSENBR")
 to select them, though.
 
 Now, let's solve this CUTEst problem with our Newton method.
+
 ```julia
 x, fx, ngx = newton(nlp)
 ```
@@ -243,6 +259,7 @@ x, fx, ngx = newton(nlp)
 CUTEst is a little more annoying in other aspect also. Like, you can't have two
 or more problems open at the same time, and you have to close this problem
 before opening a new one. (Again, PRs are welcome).
+
 ```julia
 finalize(nlp)
 nlp = CUTEstModel("HIMMELBB")
@@ -264,11 +281,13 @@ Furthermore, `hess_op` will be created with the `hprod` function, which means
 it is also memory-efficient.
 
 Let's look at a huge problem to feel the difference.
+
 ```julia
 nlp = CUTEstModel("BOX")
 nlp.meta.nvar
 ```
 Let's make a simple comparison
+
 ```julia
 function foo1()
   H = hess(nlp, nlp.meta.x0)
@@ -299,10 +318,12 @@ We arrive on a new package,
 [Krylov.jl](https://github.com/JuliaSmoothOptimizers/Krylov.jl), which
 implements Krylov methods. In particular, Conjugate Gradients.
 This package is also unreleased, so we need to clone it.
+
 ```julia
 Pkg.clone("https://github.com/JuliaSmoothOptimizers/Krylov.jl")
 ```
 Consider a simple example
+
 ```julia
 using Krylov
 A = rand(3,3)
@@ -312,6 +333,7 @@ cg(A, b)
 ```
 As expected, the system is solver, and the solution is $(1,1,1)$.
 But let's do something more.
+
 ```julia
 A = -A
 cg(A, b)
@@ -321,6 +343,7 @@ Well, actually, a variant.
 
 That's not enough tough. Krylov.jl also accepts an additional argument `radius`
 to set a trust-region radius.
+
 ```julia
 cg(A, b, radius=0.1)
 ```
@@ -330,6 +353,7 @@ method, but for now, let's continue with our line-search version.
 
 We know now how `cg` behaves for non-positive definite systems, we can't make
 the changes for a new method.
+
 ```julia
 function newton2(nlp :: AbstractNLPModel)
   x = nlp.meta.x0
@@ -361,6 +385,7 @@ function newton2(nlp :: AbstractNLPModel)
 end
 ```
 Now, running `newton2` on our large problem, we obtain
+
 ```julia
 x, fx, ngx = newton2(nlp)
 ```
