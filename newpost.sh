@@ -2,8 +2,7 @@
 
 echo -n "Title: "
 read -r title
-echo -n "name: "
-read -r name
+name=$(echo $title | tr ' ' '-' | sed 's/\.//g' | iconv -f utf8 -t ascii//TRANSLIT)
 date=$(date +"%Y-%m-%d")
 
 filename=$date-$name.md
