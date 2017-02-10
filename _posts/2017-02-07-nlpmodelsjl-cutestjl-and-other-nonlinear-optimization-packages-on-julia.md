@@ -6,7 +6,7 @@ name: 2017-02-07-nlpmodelsjl-cutestjl-and-other-nonlinear-optimization-packages-
 tags: julia optimization nlpmodels cutest work juliasmoothoptimizers tutorial
 ---
 
-A couple of weeks ago me and Professor [Dominique Orban](https://www.gerad.ca/fr/people/dominique-orban) have finally made a release of
+A couple of weeks ago me and Professor [Dominique Orban](https://dpo.github.io) have finally made a release of
 CUTEst.jl, a wrapper for the CUTEst repository of problems for nonlinear
 optimization (which I've mentioned before).
 Along with this release, we've done a release of NLPModels.jl, the underlying
