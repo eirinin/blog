@@ -18,6 +18,9 @@ side by side.
 
 *Obs.: Tutorial using Julia 0.5.0*
 
+*Edit: Second part is
+[here](https://abelsiqueira.github.io/blog/nlpmodelsjl-and-cutestjl-constrained-optimization/).*
+
 **JuliaSmoothOptimizers**
 [![JuliaSmoothOptimizers logo](https://juliasmoothoptimizers.github.io/assets/logo.png){: .img-view }](https://juliasmoothoptimizers.github.io)
 

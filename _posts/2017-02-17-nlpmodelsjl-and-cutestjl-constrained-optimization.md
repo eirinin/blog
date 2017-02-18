@@ -1,8 +1,8 @@
 ---
 layout: post
 title: NLPModels.jl and CUTEst.jl&#58; Constrained optimization
-date: 2017-02-10
-name: 2017-02-10-nlpmodelsjl-and-cutestjl-constrained-optimization
+date: 2017-02-17
+name: 2017-02-17-nlpmodelsjl-and-cutestjl-constrained-optimization
 tags: julia nlpmodels cutest work optimization constrained
 ---
 
