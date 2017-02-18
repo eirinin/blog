@@ -8,6 +8,8 @@ tags: julia nlpmodels cutest work optimization constrained
 
 This is a continuation of [this
 post](https://abelsiqueira.github.io/blog/nlpmodelsjl-cutestjl-and-other-nonlinear-optimization-packages-on-julia/).
+And again, you can follow the commands of this post in the
+[asciinema](https://asciinema.org/a/103654).
 
 If you followed along last post, you should know the basics of our
 NLPModels API, including CUTEst access.
@@ -112,6 +114,7 @@ using CUTEst
 
 clp = CUTEstModel("HS4")
 print(clp.meta)
+finalize(clp)
 ```
 
 Notice that it can happen that one or more of the variables is unlimited
@@ -204,10 +207,9 @@ Notice if you forget to set `lcon` and `ucon`, there will be no
 constraints, even though `c` is set. This is because the number of
 constraints is taken from the lenght of these vectors.
 
-Now, to access these constraints.
+Now, to access these constraints, let's consider this simple problem.
 ```julia
-nlp = ADNLPModel(x->(x[1] - 1)^2 + 100*(x[2] - x[1]^2)^2, [-1.2; 1.0],
-    c=x->[x[1]*x[2] - 0.5], lcon=[0.0], ucon=[0.0])
+nlp = ADNLPModel(f, x0, c=x->[x[1]*x[2] - 0.5], lcon=[0.0], ucon=[0.0])
 ```
 The function `cons` return $c(x)$.
 ```julia
@@ -265,6 +267,7 @@ clp = CUTEstModel("BT1")
 cons(clp, clp.meta.x0)
 jac(clp, clp.meta.x0)
 hess(clp, clp.meta.x0, y=clp.meta.y0)
+finalize(clp)
 ```
 
 **Convenience functions**
@@ -397,7 +400,7 @@ function runcutest()
   for p in problems
     nlp = CUTEstModel(p)
     try
-      x, fx, nlx, ncx = solver(nlp, verbose=false)
+      x, fx, nlx, ncx = solver(nlp)
       @printf("%-7s  %15.8e  %15.8e  %15.8e\n", p, fx, nlx, ncx)
     catch
       @printf("%-7s  %s\n", p, "failure")
