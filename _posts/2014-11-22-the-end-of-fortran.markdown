@@ -27,7 +27,7 @@ Fortran, and sometimes this is overlooked.
 
 My proposition is **use the best tool for the job**, which is just common sense,
 but applied to our area. Try [Python](http://www.python.org). Try
-[Ruby](http://www.ruby-lang.org). Try [Julia](http://www.julia-lang.org). Try
+[Ruby](http://www.ruby-lang.org). Try [Julia](http://www.julialang.org). Try
 to implementing a graph using a list of pointers. Try to implement a argument
 parser. Try to implement reading, storing, and calculating the transpose of a
 sparse matrix. Try to implement a tool to read all citations on your .tex, read
