@@ -3,7 +3,7 @@ layout: post
 title: Optimizing the Dollar Game from Numberphile
 date: 2018-09-04
 name: 2018-09-04-"optimizing-the-dollar-game-from-numberphile"
-tags: Julia, JuMP, Numberphile, Optimization, Linear Programming
+tags: julia jump numberphile optimization linearprogramming
 ---
 I just watched [The Dollar Game -
 Numberphile](https://www.youtube.com/watch?v=U33dsEcKgeQ), in which a game involving graphs is presented.

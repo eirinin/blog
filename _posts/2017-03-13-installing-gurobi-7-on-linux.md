@@ -3,7 +3,7 @@ layout: post
 title: Installing Gurobi 7 on Linux
 date: 2017-03-13
 name: 2017-03-13-installing-gurobi-7-on-linux
-tags: Work Gurobi Linux
+tags: work gurobi linux
 ---
 
 *Disclaimer:* What I did here might work on Windows or OSX, but I give no

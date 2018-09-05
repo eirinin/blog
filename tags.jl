@@ -17,9 +17,13 @@ function create_tags()
   # Check each tag
   for file in readdir("_posts")
     if isdir(joinpath("_posts", file)); continue; end
+    if file[end-1:end] != "md" && file[end-7:end] != "markdown"
+      warn("Unexpected file type $file")
+      continue
+    end
 
     # Get all tags in post
-    println("file = $file")
+    #println("file = $file")    # For debugging
     tags = YAML.load(open(joinpath("_posts", file)))
     if !haskey(tags, "tags")
       error("Post $file does not have tags")
@@ -28,7 +32,7 @@ function create_tags()
 
     for tag in tags
       # Only lowercase
-      if !islower(tag)
+      if !all(islower, tag)
         error("On post $file, tag $tag should be lower case.")
       end
       i = findfirst(tag .== keys)

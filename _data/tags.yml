@@ -1,6 +1,6 @@
 - key:   julia
   name:  Julia
-  count: 14
+  count: 18
 - key:   bibliography
   name:  Bibliography
   count: 2
@@ -27,13 +27,13 @@
   count: 1
 - key:   performance
   name:  Performance
-  count: 1
+  count: 2
 - key:   profile
   name:  Profile
-  count: 1
+  count: 2
 - key:   work
   name:  Work
-  count: 15
+  count: 20
 - key:   rant
   name:  Rant
   count: 1
@@ -51,7 +51,7 @@
   count: 1
 - key:   ufpr
   name:  UFPR
-  count: 2
+  count: 3
 - key:   tech
   name:  Tech
   count: 4
@@ -60,7 +60,7 @@
   count: 2
 - key:   linux
   name:  Linux
-  count: 2
+  count: 3
 - key:   install
   name:  Install
   count: 3
@@ -69,7 +69,7 @@
   count: 1
 - key:   cutest
   name:  CUTEst
-  count: 5
+  count: 6
 - key:   matlab
   name:  MatLab
   count: 1
@@ -132,7 +132,7 @@
   count: 1
 - key:   optimization
   name:  Optimization
-  count: 2
+  count: 6
 - key:   diff
   name:  Diff
   count: 1
@@ -177,10 +177,28 @@
   count: 1
 - key:   nlpmodels
   name:  NLPModels
-  count: 1
+  count: 2
 - key:   juliasmoothoptimizers
   name:  JuliaSmoothOptimizers
   count: 1
 - key:   tutorial
   name:  Tutorial
+  count: 2
+- key:   constrained
+  name:  Constrained
+  count: 1
+- key:   simposio
+  name:  Simpósio
+  count: 1
+- key:   gurobi
+  name:  Gurobi
+  count: 1
+- key:   jump
+  name:  JuMP
+  count: 2
+- key:   numberphile
+  name:  Numberphile
+  count: 1
+- key:   linearprogramming
+  name:  Linear Programming
   count: 1
