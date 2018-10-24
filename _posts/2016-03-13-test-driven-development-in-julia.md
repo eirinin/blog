@@ -89,7 +89,7 @@ Our testing environment will consist of having a terminal open at all
 times at the root of this project. Our testing command will be
 
 {% highlight bash %}
-julia -L src/RomanNumerals.jl src/runtests.jl
+julia -L src/RomanNumerals.jl test/runtests.jl
 {% endhighlight %}
 
 There are different ways to issue the same command, but this is locally good.
