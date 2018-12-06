@@ -94,6 +94,7 @@ Check that you can see your package
 ```
 Check that everything passes according to your (evil) plan.
 ```
+(v1.0) pkg> test MyPackage
    Testing MyPackage
  Resolving package versions...
     Status `/tmp/tmpO7CsSr/Manifest.toml`
