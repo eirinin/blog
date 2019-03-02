@@ -1,8 +1,8 @@
 # Site settings
-title: Abel Soares Siqueira
-email: abel.s.siqueira@gmail.com
+title: Eirini Ntoutsi
+email: ntoutsi@dbs.ifi.lmu.de 
 baseurl: "/blog" # the subpath of your site, e.g. /blog/
-url: "http://abelsiqueira.github.io" # the base hostname & protocol for your site
+url: "http://dmgroup.github.io" # the base hostname & protocol for your site
 github_username:  abelsiqueira
 permalink: /:title/
 
